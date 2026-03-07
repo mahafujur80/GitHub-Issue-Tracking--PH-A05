@@ -32,7 +32,7 @@ const displayAllCard = (cardArray) => {
 
     const cardContainer = document.getElementById("allCard-Container");
     cardContainer.innerHTML = "";
-    const newDate = new Date();
+    const newDate = new Date("2024-01-25T08:30:00Z");
 
     cardArray.forEach(card => {
 
@@ -81,7 +81,7 @@ const displayAllCard = (cardArray) => {
                     <div class="h-px bg-gray-300 my-3"></div>
 
                     <div>
-                      <p class="opacity-85">#${card.author}</p>
+                      <p class="opacity-85"># ${card.author}</p>
                       <p class="opacity-85">${newDate.toLocaleDateString()}</p>
                     </div>
     `;
@@ -115,8 +115,8 @@ const displayModal = (obj) => {
         <div class="modal-box">
               <h3 class="text-xl font-bold py-2">${obj.title}</h3>
                   <div class="flex gap-2">
-                      <p  class="badge badge-success">${obj.status}</p>
-                      <p> ✿ Opened by <span>${obj.assignee}</span> <span> ✿ ${newDate.toLocaleDateString()}</span></p>
+                      <p  class="text-white badge ${obj.status === "open"? "badge-success":"status-closed"}">${obj.status}</p>
+                      <p> ✿ Opened by <span>${obj.assignee === ""? obj.author:obj.assignee}</span> <span> ✿ ${newDate.toLocaleDateString()}</span></p>
                   </div>
                     <div class="flex gap-3 py-3">
                         ${showLebels(obj.labels)}
@@ -129,7 +129,7 @@ const displayModal = (obj) => {
                         <div class="flex justify-between bg-base-200 p-5 rounded-xl">
                             <div class="text-start w-[50%]">
                             <p class="opacity-90">Assignee:</p>
-                            <p class="font-semibold">${obj.assignee}</p>
+                            <p class="font-semibold">${obj.assignee === ""? obj.author:obj.assignee}</p>
                             </div>
                             <div class="text-start w-[50%]">
                              <P class="opacity-90">Priority:</P>
@@ -191,5 +191,6 @@ const fetchSearch = async(input)=>{
   const res = await fetch(url);
   const data = await res.json();
   const totalResult = data.data;
+
   displayAllCard(totalResult);
 };

@@ -2,3 +2,12 @@
         font-family: "Geist", sans-serif;
 };
 
+/* modal status color  */
+.status-open{
+        background-color: #00a96e;
+        color: whitesmoke;
+}
+
+.status-closed{
+ background-color: #a855f7;
+}
