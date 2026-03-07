@@ -6,7 +6,7 @@ document.getElementById("loginBtn").addEventListener("click", ()=>{
 
     if(userNameValue === "admin" && userPasswordValue === "admin123"){
         alert("LogIn Success");
-        window.location.replace('./Home.html')
+        window.location.assign('./home.html')
          ;
     }else{
         alert("Invalid Username Or Password")

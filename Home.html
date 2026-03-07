@@ -22,22 +22,25 @@
 
     <!-- link css  -->
     <link rel="stylesheet" href="/style/home.css" />
+    <!-- cdn font awesome  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body class="bg-base-200 min-h-screen">
     <header>
-      <div class="navbar flex justify-between bg-base-100 shadow-sm px-20">
+      <div class="navbar flex justify-between bg-base-100 shadow-sm max-sm:px-5 px-20">
         <div class="flex items-center justify-center gap-1">
-          <img class="w-10" src="./assets/github-logo.png" alt="weblogo" />
-          <h1><a class="text-2xl font-bold">GitHub Issues Tracker</a></h1>
+          <img class="max-sm:w-8 w-10" src="./assets/github-logo.png" alt="weblogo" />
+          <h1><a class="max-sm:text-xl text-2xl font-bold">GitHub <span class="max-sm:hidden">Issues Tracker</span></a></h1>
         </div>
         <div class="flex items-center justify-center gap-1">
           <input
           id="searchInput"
             type="text"
-            placeholder="Search Issues..."
-            class="p-2 outline-none border-gray-300 rounded"
+            placeholder="search issues..."
+            class="max-sm:w-[100px]  p-2 outline-none border-gray-300 rounded"
           />
-          <button id="searchButton" class="btn btn-primary">search</button>
+          <button id="searchButton" class="btn btn-primary sm:hidden"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button id="searchButton" class="btn btn-primary max-sm:hidden">Search</button>
         </div>
       </div>
     </header>
