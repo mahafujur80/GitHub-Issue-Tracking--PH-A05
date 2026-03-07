@@ -177,3 +177,18 @@ openBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   displayAllCard(statusCloseArr);
 });
+
+document.getElementById("searchButton").addEventListener("click", ()=>{
+  const inputValue = document.getElementById("searchInput").value.trim();
+  if(inputValue.length === 0){
+    alert("Please enter something to search");
+    return;
+  }
+   fetchSearch(`${inputValue}`);
+})
+const fetchSearch = async(input)=>{
+  const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${input}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  console.log(data)
+}

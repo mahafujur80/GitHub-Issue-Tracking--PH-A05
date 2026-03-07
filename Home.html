@@ -32,11 +32,12 @@
         </div>
         <div class="flex items-center justify-center gap-1">
           <input
+          id="searchInput"
             type="text"
             placeholder="Search Issues..."
             class="p-2 outline-none border-gray-300 rounded"
           />
-          <button class="btn btn-primary">search</button>
+          <button id="searchButton" class="btn btn-primary">search</button>
         </div>
       </div>
     </header>
@@ -81,7 +82,7 @@
       <section>
         <div
           id="allCard-Container"
-          class="p-5 mx-auto grid grid-cols-4 gap-4 shadow-xl"
+          class="p-5 mx-auto grid grid-cols-4 max-sm:grid-cols-1 gap-4 shadow-xl"
         >
           <div
             class="bg-white space-y-2 p-3 rounded-xl border-t-3 border-green-400 shadow hover:scale-[0.99]"
