@@ -1,6 +1,6 @@
 // fucntion show label in card by looping array
 const showLebels = (arr) => {
-    const newArr = arr.map(item => `<p class="badge badge-soft bg-yellow-200 font-[400] text-[12px]">${item.toUpperCase()}</p>`);
+    const newArr = arr.map(item => `<p class="badge badge-soft bg-yellow-200 font-[400] text-[11px]">${item.toUpperCase()}</p>`);
     return newArr.join("");
 }
 // open and close array
@@ -9,6 +9,7 @@ let statusCloseArr = [];
 
 // fetch all issue
 const loadAllCard = async () => {
+
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const data = await res.json();
 
@@ -20,7 +21,7 @@ const loadAllCard = async () => {
     const closeIssues = data.data.filter(issue => issue.status === "closed");
     statusCloseArr = closeIssues;
 
-
+  document.getElementById("loadingSpinner").classList.add("hidden")
 };
 
 // display all issue by this function
@@ -49,7 +50,7 @@ const displayAllCard = (cardArray) => {
 
 
         const newDiv = document.createElement("div");
-        newDiv.className = "bg-white space-y-2 p-3 rounded-xl border-t-4  shadow hover:scale-[0.99]";
+        newDiv.className = "bg-white space-y-2 p-3 rounded-xl border-t-4  shadow hover:scale-[0.98] transition duration-200 cursor-pointer";
         newDiv.setAttribute("onclick", `showMyModal(${card.id})`)
         // border color update korbo and icon
         let icon;
@@ -86,6 +87,8 @@ const displayAllCard = (cardArray) => {
                     </div>
     `;
         cardContainer.appendChild(newDiv)
+
+       document.getElementById("cardSectionContainer").classList.remove("hidden")
     });
 }
 loadAllCard();
@@ -116,7 +119,7 @@ const displayModal = (obj) => {
               <h3 class="text-xl font-bold py-2">${obj.title}</h3>
                   <div class="flex gap-2 max-sm:flex-col">
                       <p  class="text-white badge ${obj.status === "open"? "badge-success":"status-closed"}">${obj.status}</p>
-                      <p> ✿ Opened by <span>${obj.assignee === ""? obj.author:obj.assignee}</span> <span> ✿ ${newDate.toLocaleDateString()}</span></p>
+                      <p> ✿ Opened by <span class="font-semibold">${obj.assignee === ""? obj.author:obj.assignee}</span> <span> ✿ ${newDate.toLocaleDateString()}</span></p>
                   </div>
                     <div class="flex gap-3 py-3">
                         ${showLebels(obj.labels)}
@@ -171,13 +174,17 @@ allBtn.addEventListener("click", () => {
 });
 
 openBtn.addEventListener("click", () => {
+  document.getElementById("allCard-Container").classList.add("hidden")
+  document.getElementById("loadingSpinner").classList.remove("hidden")
   displayAllCard(statusOpenArr);
+  document.getElementById("allCard-Container").classList.remove("hidden")
 });
 
 closeBtn.addEventListener("click", () => {
   displayAllCard(statusCloseArr);
 });
 
+// search button 
 document.getElementById("searchButton").addEventListener("click", ()=>{
   const inputValue = document.getElementById("searchInput").value.trim();
   if(inputValue.length === 0){
@@ -187,10 +194,11 @@ document.getElementById("searchButton").addEventListener("click", ()=>{
    fetchSearch(`${inputValue}`);
 })
 const fetchSearch = async(input)=>{
+
   const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${input}`;
   const res = await fetch(url);
   const data = await res.json();
   const totalResult = data.data;
 
-  displayAllCard(totalResult);
+  displayAllCard(totalResult)
 };
