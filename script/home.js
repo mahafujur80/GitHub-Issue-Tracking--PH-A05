@@ -174,10 +174,7 @@ allBtn.addEventListener("click", () => {
 });
 
 openBtn.addEventListener("click", () => {
-  document.getElementById("allCard-Container").classList.add("hidden")
-  document.getElementById("loadingSpinner").classList.remove("hidden")
   displayAllCard(statusOpenArr);
-  document.getElementById("allCard-Container").classList.remove("hidden")
 });
 
 closeBtn.addEventListener("click", () => {
