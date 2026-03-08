@@ -42,14 +42,14 @@
             src="./assets/github-logo.png"
             alt="weblogo"
           />
-          <h1 >
-            <a class="max-md:hidden  text-2xl font-bold"
+          <h1>
+            <a class="max-md:hidden text-2xl font-bold"
               >GitHub <span>Issues Tracker</span></a
             >
           </h1>
         </div>
         <div class="flex items-center justify-center gap-1">
-          <div class="relative">
+          <!-- <div class="relative">
             <i class="fa-brands fa-sistrix absolute left-3 top-3 opacity-60"></i>
             <input
             id="searchInput"
@@ -57,8 +57,33 @@
             placeholder="search issues..."
             class="max-sm:w-[80px] p-2 pl-10 outline-none border-gray-300 rounded-md"
           />
-          </div>
-          <button id="searchButton"  class="btn btn-primary rounded-md">
+          </div> -->
+          <label class="input focus-within:outline-none focus-within:border-green-300">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              id="searchInput"
+              class="max-sm:w-[80px] border-gray-300 rounded-md "
+              type="text"
+              required
+              placeholder="Search"
+            />
+          </label>
+          <button id="searchButton" class="btn btn-primary rounded-md">
             Search
           </button>
         </div>
@@ -128,7 +153,10 @@
 
       <section class="pb-10">
         <div id="cardSectionContainer" class="hidden">
-          <div id="allCard-Container" class=" py-10 px-4 mx-auto grid grid-cols-4 max-sm:grid-cols-1 gap-4 shadow-2xl rounded-xl">
+          <div
+            id="allCard-Container"
+            class="py-10 px-4 mx-auto grid grid-cols-4 max-sm:grid-cols-1 gap-4 shadow-2xl rounded-xl"
+          >
             <!-- <div
               class="bg-white space-y-2 p-3 rounded-xl border-t-3 border-green-400 shadow hover:scale-[0.99]"
             >
@@ -174,9 +202,9 @@
           <!-- spinner  -->
         </div>
         <div
-        id="loadingSpinner"
+          id="loadingSpinner"
           class="w-full col-span-4 flex flex-col justify-center items-center h-[400px] gap-3 bg-transparent"
-          >
+        >
           <span class="loading loading-bars loading-xl"></span>
           <p class="text-gray-500">Loading...</p>
         </div>
@@ -224,5 +252,3 @@
     <script src="./script/home.js"></script>
   </body>
 </html>
-<!-- <p class="badge badge-soft badge-error font-[400] text-sm">${card.labels[0]}</p>
-                      <p class="badge badge-soft badge-warning font-[400] text-sm">${card.labels[1]? card.labels[1]:"Nothing"}</p> -->
