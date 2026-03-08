@@ -5,7 +5,6 @@ document.getElementById("loginBtn").addEventListener("click", ()=>{
     const userPasswordValue = userPassword.value.trim();
 
     if(userNameValue === "admin" && userPasswordValue === "admin123"){
-        alert("LogIn Success");
         window.location.assign('./home.html')
          ;
     }else{

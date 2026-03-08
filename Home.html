@@ -38,24 +38,27 @@
       >
         <div class="flex items-center justify-center gap-1">
           <img
-            class="max-sm:w-8 w-10"
+            class="max-sm:w-9 w-10"
             src="./assets/github-logo.png"
             alt="weblogo"
           />
-          <h1>
-            <a class="max-sm:text-xl text-2xl font-bold"
-              >GitHub <span class="max-sm:hidden">Issues Tracker</span></a
+          <h1 >
+            <a class="max-md:hidden  text-2xl font-bold"
+              >GitHub <span>Issues Tracker</span></a
             >
           </h1>
         </div>
         <div class="flex items-center justify-center gap-1">
-          <input
+          <div class="relative">
+            <i class="fa-brands fa-sistrix absolute left-3 top-3 opacity-60"></i>
+            <input
             id="searchInput"
             type="text"
             placeholder="search issues..."
-            class="max-sm:w-[100px] p-2 outline-none border-gray-300 rounded"
+            class="max-sm:w-[80px] p-2 pl-10 outline-none border-gray-300 rounded-md"
           />
-          <button id="searchButton"  class="btn btn-primary">
+          </div>
+          <button id="searchButton"  class="btn btn-primary rounded-md">
             Search
           </button>
         </div>
