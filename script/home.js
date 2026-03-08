@@ -114,7 +114,7 @@ const displayModal = (obj) => {
     modalContainer.innerHTML = `
         <div class="modal-box">
               <h3 class="text-xl font-bold py-2">${obj.title}</h3>
-                  <div class="flex gap-2">
+                  <div class="flex gap-2 max-sm:flex-col">
                       <p  class="text-white badge ${obj.status === "open"? "badge-success":"status-closed"}">${obj.status}</p>
                       <p> ✿ Opened by <span>${obj.assignee === ""? obj.author:obj.assignee}</span> <span> ✿ ${newDate.toLocaleDateString()}</span></p>
                   </div>
