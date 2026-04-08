@@ -1,20 +1,40 @@
-## 1 What is the difference between var, let, and const?
-let and const Es6 Feature and if we declare a variable by var it can be reassign and re declare and call before declare And const store constant value we can't redeclare or reassign if use let we can reassign but can't redeclare.
+🐙 GitHub Issue Tracker Web App
 
-## 2 What is the spread operator (...)?
+A simple and interactive Issue Tracker application where users can log in, browse issues, filter them by status, and view detailed information in a modal view.
 
-spread ... operator use for spread array object and spread operator separate array object into normal string or number for use in function parameter and create a new array or object by this data 
-
-## 3 What is the difference between map(), filter(), and forEach()?
- 
- map(), filter(), and forEach() is a powerful array method to looping in array map() looping full array and return new array by done her work given by functionality and filter()  work by condition and if condition are true then filter return a new array for filter data. ForEach() also looping in array and execute a function and nothing return any value or array. use to create dynamic dom.
-
- ## 4 What is an arrow function?
-
- arrow function is update version of javaScript. arrow function add on ES6 update it allows you to write shorter and cleaner.
-
- ## 5 What are template literals?
-
- Template literals are a way to create strings in JavaScript using backticks (`) and write multi-line strings in out code they allow variable into string and mathematic operatin with ${} this.
-
- ## ভাই আমি ইংলিশ এ কাচা পারি না তেমন 🙂🙂 Forgive Me for হিজিবিজি হিজিবিজি English
+🔐 Demo Login Credentials
+Username: admin
+Password: admin123
+🚀 Features
+🔑 Authentication System
+Login page with default admin credentials
+Basic validation for user access
+📋 Issue Listing
+Load and display all issues dynamically
+Clean 4-column responsive card layout (based on Figma)
+🔍 Filtering System
+Filter issues by:
+Open
+Closed
+Active tab highlighting for better UX
+🟩 Dynamic UI Indicators
+Open Issues → Green top border
+Closed Issues → Purple top border
+🔎 Search Functionality
+Search issues by title or keywords
+🧾 Issue Details Modal
+Click on any issue card to view full details
+Displays:
+Title
+Description
+Status
+Author
+Priority
+Label
+Created Date
+⏳ Loading State
+Spinner shown while fetching/loading data
+🛠️ Technology Stack
+HTML
+CSS (Tailwind CSS / DaisyUI)
+JavaScript (Vanilla)
